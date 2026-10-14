@@ -1,0 +1,790 @@
+    SIFR CAPTURE preset=normal scope=#nav-cart
+[AMAZON SiFR INSTAX DUAL LEDGER V13 GEMMA4] Amazon | SM-G991B | Executor=Qwen3.5-0.8B LOCAL (127.0.0.1:8080) | Reasoner=Google Gemma 4 E2B Q3 LOCAL (127.0.0.1:8081) | via E2LLM/SiFR | Firefox
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 54% | discharging | battery 30.1°C | step=RUN START EXECUTOR
+[DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 54% | discharging | battery 30.1°C | step=RUN START REASONER
+    SIFR CACHE queryable session=8472539218cd scope=#nav-cart
+    CART EVIDENCE -> explicit count=0
+  [LEDGER 001] - | BASELINE | CART_BASELINE_OBSERVED
+
+[ITEM CAMERA] Fujifilm Instax Mini 12 instant camera
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 54% | discharging | battery 30.1°C | step=REASONER CALL
+    GEMMA4 LOCAL (47.3s | reasoning=1044 chars): ```json
+{
+"query":"Fujifilm Instax Mini 12 camera"
+}
+```
+  [LEDGER 002] CAMERA | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 003] CAMERA | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CAPTURE preset=normal scope=#nav-search
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 53% | discharging | battery 32.6°C | step=MODEL CALL
+    MODEL (1.6s | PP 35.9 tok/s | TG 17.1 tok/s): search_amazon_search_amazon
+  [LEDGER 004] CAMERA | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 005] CAMERA | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> #twotabsearchtextbox
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 53% | discharging | battery 32.6°C | step=ACT paste
+    SIFR CACHE queryable session=8472539218cd scope=#nav-search
+  [LEDGER 006] CAMERA | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=8472539218cd scope=#nav-search
+    SIFR CACHE queryable session=8472539218cd scope=#nav-search
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 53% | discharging | battery 32.6°C | step=MODEL CALL
+    MODEL (0.6s | PP 96.7 tok/s | TG 17.3 tok/s): go
+  [LEDGER 007] CAMERA | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0001 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 53% | discharging | battery 32.6°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 008] CAMERA | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple | add-to-cart available
+      1: Fujifilm Instax Mini 12 Instant Camera - Blossom Pink | add-to-cart available
+      2: Fujifilm Instax Mini 12 Instant Camera - Lilac Purple | Automatic exposure with selfie mirror and parallax correction for ... | add-to-cart 
+      3: FUJIFILM Instax Mini 12 Instant Camera Holiday Bundle 2026, Blossom Pink | Instant film camera with selfie mirror, close-u... | add-to-cart 
+      4: FUJIFILM Instax Mini 12 Instant Camera Holiday Bundle 2026, Mint Green | Instant film camera with selfie mirror, close-up ... | add-to-cart 
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 53% | discharging | battery 32.6°C | step=REASONER CALL
+    GEMMA4 LOCAL (65.3s | reasoning=1808 chars): 0
+  [LEDGER 009] CAMERA | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 010] CAMERA | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 011] CAMERA | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instant-Decoration-Stickers-Accessories/dp/B0C2JCTRNQ/ref=sr_1_9…
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 52% | discharging | battery 33.8°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 012] CAMERA | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 013] CAMERA | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple : Electronics / #feature-bullets | Value accessory bundle. Includes the famous Fujifilm Instax Mini 12Camera (color your choice) with a matching Camera Case to keep the camera protected / #feature-bullet
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 52% | discharging | battery 33.5°C | step=REASONER CALL
+    GEMMA4 LOCAL (57.5s | reasoning=1771 chars): Y
+  [LEDGER 014] CAMERA | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Is this a real Fujifilm Instax MINI 12 CAMERA, not film or a case? -> Y (yes exact camera)
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    E2LLM PRIMARY PRICE: $164.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 52% | discharging | battery 34.8°C | step=REASONER CALL
+    GEMMA4 LOCAL (66.8s | reasoning=1613 chars): Y
+  [LEDGER 015] CAMERA | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Does the sold CAMERA BUNDLE physically INCLUDE genuine Instax MINI film? No -> Y (included in THIS offer)
+  [LEDGER 016] CAMERA | BUNDLE_AUDIT | GEMMA_BUNDLE_COMPONENT
+    BUNDLE COVERAGE FILM: Gemma=Y | explicit evidence=True | INCLUDED (pending cart confirmation)
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 51% | discharging | battery 34.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (70.7s | reasoning=1577 chars): Y
+  [LEDGER 017] CAMERA | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Does the sold CAMERA BUNDLE physically INCLUDE a fitted carrying CASE for I -> Y (included in THIS offer)
+  [LEDGER 018] CAMERA | BUNDLE_AUDIT | GEMMA_BUNDLE_COMPONENT
+    BUNDLE COVERAGE CASE: Gemma=Y | explicit evidence=True | INCLUDED (pending cart confirmation)
+    LEDGER COMPATIBLE: CAMERA | item USD 164.99 | running subtotal USD 164.99/200.00
+  [LEDGER 019] CAMERA | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 51% | discharging | battery 34.9°C | step=MODEL CALL
+    MODEL (2.8s | PP 50.2 tok/s | TG 16.0 tok/s): add_to_shopping_cart
+  [LEDGER 020] CAMERA | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 021] CAMERA | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+  [LEDGER 022] FILM | PLAN | NEED_PLANNED_IN_CAMERA_BUNDLE
+  [LEDGER 023] CASE | PLAN | NEED_PLANNED_IN_CAMERA_BUNDLE
+
+[ITEM BATTERIES] spare AA alkaline batteries
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 51% | discharging | battery 34.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (65.3s | reasoning=1205 chars): ```json
+{
+  "query": "pack of AA 1.5V alkaline batteries",
+  "level": 0
+}
+```
+  [LEDGER 024] BATTERIES | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 025] BATTERIES | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 50% | discharging | battery 34.5°C | step=MODEL CALL
+    MODEL (1.6s | PP 73.0 tok/s | TG 15.2 tok/s): search_amazon_search_amazon
+  [LEDGER 026] BATTERIES | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 027] BATTERIES | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> input0001
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 50% | discharging | battery 34.5°C | step=ACT paste
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+  [LEDGER 028] BATTERIES | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    SIFR CACHE queryable session=ae1a19224a10 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 50% | discharging | battery 34.5°C | step=MODEL CALL
+    MODEL (1.0s | PP 51.9 tok/s | TG 8.0 tok/s): go
+  [LEDGER 029] BATTERIES | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0002 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 50% | discharging | battery 34.5°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 030] BATTERIES | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable | add-to-cart available
+      1: Amazon Basics 12-Pack AA Alkaline Batteries, 1.5 Volt, Long Lasting Power, 10-Year Shelf Life | add-to-cart available
+      2: Amazon Basics 20-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Leak-Free Shelf Life, for Everyday and Household Devices | add-to-cart availa
+      3: Amazon Basics 36-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, for Everyday and Professional Devices | add-to-cart available
+      4: Amazon Basics 48-Pack AA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year Shelf Life, Long-lasting, No Leakage | add-to-cart available
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 50% | discharging | battery 34.5°C | step=REASONER CALL
+    GEMMA4 LOCAL (67.9s | reasoning=1712 chars): 0
+  [LEDGER 031] BATTERIES | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 032] BATTERIES | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 033] BATTERIES | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-100-Pack/dp/B01B8R6PF2/ref=sr_1_5
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 50% | discharging | battery 34.5°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 034] BATTERIES | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=2303674902a5 scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 035] BATTERIES | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=2303674902a5 scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable : Health & Household / #feature-bullets | IN THE BOX: 100-pack of 1.5 volt AA alkaline batteries for reliable performance across a wide range of devices / #feature-bullets | DEVICE COMPATIBLE: Ideal batte
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 49% | discharging | battery 35.0°C | step=REASONER CALL
+    GEMMA4 LOCAL (72.6s | reasoning=1923 chars): Y
+  [LEDGER 036] BATTERIES | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Is this a pack of >=2 AA alkaline 1.5V batteries, not AAA, rechargeable or  -> Y (AA alkaline batteries)
+    SIFR CACHE queryable session=2303674902a5 scope=root
+    E2LLM PRIMARY PRICE: $25.99 | #corePriceDisplay_desktop_feature_div
+    LEDGER COMPATIBLE: BATTERIES | item USD 25.99 | running subtotal USD 190.98/200.00
+  [LEDGER 037] BATTERIES | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 49% | discharging | battery 35.5°C | step=MODEL CALL
+    MODEL (1.9s | PP 69.0 tok/s | TG 14.5 tok/s): add_to_shopping_cart
+  [LEDGER 038] BATTERIES | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 039] BATTERIES | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+
+[PLAN AUDIT] complete=True staged_usd=190.98 / 200.00
+  [LEDGER 040] - | PLAN_AUDIT | PLAN_COMPLETE
+    SIFR CACHE queryable session=2303674902a5 scope=root
+    CART EVIDENCE -> explicit count=0
+
+[COMMIT CAMERA] rechecking planned product B0C2JCTRNQ
+  [LEDGER 041] CAMERA | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instant-Decoration-Stickers-Accessories/dp/B0C2JCTRNQ/ref=sr_1_9%E2%
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 49% | discharging | battery 35.5°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    SIFR INVALIDATE: tab URL changed
+    COMMIT CAPTURE READ 1/3 FAILED: PerceptionDecodeError: COMMIT tab URL changed during observation
+    SIFR INVALIDATE: COMMIT read-only recapture
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 042] - | COMMIT | READ_ONLY_RECAPTURE_RECOVERED
+    SIFR CACHE queryable session=975730db1cba scope=root
+    E2LLM PRIMARY PRICE: $164.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 49% | discharging | battery 35.5°C | step=MODEL CALL
+    MODEL (1.0s | PP 125.2 tok/s | TG 30.6 tok/s): add_to_shopping_cart
+  [LEDGER 043] CAMERA | COMMIT | ADD_DISPATCH
+    ACT click -> input0004
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 49% | discharging | battery 35.5°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=1
+    CART EVIDENCE 1/6: expected=1 observed=1
+  [LEDGER 044] CAMERA | DONE | ITEM_COMPLETE
+  [LEDGER 045] FILM | DONE | NEED_COVERED_BY_CAMERA_BUNDLE
+    LEDGER COVERED: FILM is supplied by the camera bundle; no separate Add
+  [LEDGER 046] CASE | DONE | NEED_COVERED_BY_CAMERA_BUNDLE
+    LEDGER COVERED: CASE is supplied by the camera bundle; no separate Add
+    SIFR CACHE queryable session=e13eceadf54e scope=#nav-cart
+    CART EVIDENCE -> explicit count=1
+
+[COMMIT BATTERIES] rechecking planned product B01B8R6PF2
+  [LEDGER 047] BATTERIES | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-100-Pack/dp/B01B8R6PF2/ref=sr_1_5
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 49% | discharging | battery 35.5°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    SIFR INVALIDATE: tab URL changed
+    COMMIT CAPTURE READ 1/3 FAILED: PerceptionDecodeError: COMMIT tab URL changed during observation
+    SIFR INVALIDATE: COMMIT read-only recapture
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 048] - | COMMIT | READ_ONLY_RECAPTURE_RECOVERED
+    SIFR CACHE queryable session=5b4b000e091c scope=root
+    E2LLM PRIMARY PRICE: $25.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 34.4°C | step=MODEL CALL
+    MODEL (0.9s | PP 152.8 tok/s | TG 30.0 tok/s): add_to_shopping_cart
+  [LEDGER 049] BATTERIES | COMMIT | ADD_DISPATCH
+    ACT click -> input0003
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 34.4°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=2
+    CART EVIDENCE 1/6: expected=2 observed=2
+  [LEDGER 050] BATTERIES | DONE | ITEM_COMPLETE
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 34.4°C | step=FINAL AUDIT
+    SIFR CACHE queryable session=3973092d451b scope=#nav-cart
+    CART EVIDENCE -> explicit count=2
+
+================ FINAL HANDOFF ================
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 34.4°C | step=FINAL HANDOFF
+{
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "architecture": "Amazon SiFR instax-kit dual-model ledger v12 Gemma4",
+  "store": "Amazon",
+  "cart_count": 2,
+  "expected_cart_count": 2,
+  "mode": "COMMIT",
+  "budget_usd": 200.0,
+  "plan_subtotal_usd": 190.98,
+  "items": {
+    "CAMERA": {
+      "status": "ADDED",
+      "product": "Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple | add-to-cart available",
+      "asin": "B0C2JCTRNQ",
+      "usd": 164.99,
+      "covered_by": null,
+      "compatibility": {
+        "format": "INSTAX_MINI",
+        "reason": "GEMMA_CONFIRMED_CAMERA_IN_LISTING",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple : Electronics\n#feature-bullets | Value accessory bundle. Includes the famous Fujifilm Instax Mini 12Camera (color your choice) with a matching Camera Case to keep the camera protected\n#feature-bullets | 60 Fujifilm Instax Films so you can use your brand new camera right away! Photo Album, perfectly sized for the instant prints.",
+        "model": "MINI_12"
+      },
+      "failure": null
+    },
+    "FILM": {
+      "status": "COVERED",
+      "product": "Included in camera bundle: Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple | add-to-cart available",
+      "asin": null,
+      "usd": 0.0,
+      "covered_by": "CAMERA",
+      "compatibility": {
+        "format": "INSTAX_MINI",
+        "reason": "GEMMA_BUNDLE_COVERAGE_VERIFIED"
+      },
+      "failure": null
+    },
+    "BATTERIES": {
+      "status": "ADDED",
+      "product": "Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable | add-to-cart available",
+      "asin": "B01B8R6PF2",
+      "usd": 25.99,
+      "covered_by": null,
+      "compatibility": {
+        "format": "AA_ALKALINE",
+        "reason": "GEMMA_AND_BATTERY_SPECS_MATCH",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable : Health & Household\n#feature-bullets | IN THE BOX: 100-pack of 1.5 volt AA alkaline batteries for reliable performance across a wide range of devices\n#feature-bullets | DEVICE COMPATIBLE: Ideal battery for game controllers, toys, flashlights, digital cameras, clocks, and more\n#feature-bullets | EASY USE & STORAGE: Ships in Certified Frustration-Free Packaging; easy to open and store extras for later use\n#feature-bullets | SINGLE USE: These batteries are NOT rechargeable; for rechargeable options, check out Amazon Basics rechargeable batteries\n#feature-bullets | For frequent/professional/industrial use, check out Amazon Basics Industrial AA batteries.",
+        "count": 100
+      },
+      "failure": null
+    },
+    "CASE": {
+      "status": "COVERED",
+      "product": "Included in camera bundle: Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple | add-to-cart available",
+      "asin": null,
+      "usd": 0.0,
+      "covered_by": "CAMERA",
+      "compatibility": {
+        "format": "FITS_INSTAX_MINI_12",
+        "reason": "GEMMA_BUNDLE_COVERAGE_VERIFIED"
+      },
+      "failure": null
+    }
+  },
+  "checkout_performed": false
+}
+state: /data/data/com.termux/files/home/instax_v13_20261012_123949_24259_state.json
+log  : /data/data/com.termux/files/home/logs/instax_v13_20261012_123949_24259.jsonl
+STOP: cart only. No checkout, Buy Now, payment, or purchase action was attempted.
+    SIFR CAPTURE preset=normal scope=#nav-cart
+[AMAZON SiFR INSTAX DUAL LEDGER V13 GEMMA4] Amazon | SM-G991B | Executor=Qwen3.5-0.8B LOCAL (127.0.0.1:8080) | Reasoner=Google Gemma 4 E2B Q3 LOCAL (127.0.0.1:8081) | via E2LLM/SiFR | Firefox
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 34.4°C | step=RUN START EXECUTOR
+[DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 48% | discharging | battery 34.4°C | step=RUN START REASONER
+    SIFR CACHE queryable session=cb4c0956f658 scope=#nav-cart
+    CART EVIDENCE -> explicit count=0
+  [LEDGER 001] - | BASELINE | CART_BASELINE_OBSERVED
+
+[ITEM CAMERA] Fujifilm Instax Mini 12 instant camera
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 48% | discharging | battery 34.4°C | step=REASONER CALL
+    GEMMA4 LOCAL (53.2s | reasoning=1354 chars): ```json
+{
+"query":"Fujifilm Instax Mini 12 instant camera",
+"level":0
+}
+```
+  [LEDGER 002] CAMERA | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 003] CAMERA | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CAPTURE preset=normal scope=#nav-search
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 35.0°C | step=MODEL CALL
+    MODEL (1.0s | PP 8.2 tok/s | TG 15.8 tok/s): search_amazon_search_amazon
+  [LEDGER 004] CAMERA | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 005] CAMERA | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> #twotabsearchtextbox
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 35.0°C | step=ACT paste
+    SIFR CACHE queryable session=cb4c0956f658 scope=#nav-search
+  [LEDGER 006] CAMERA | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=cb4c0956f658 scope=#nav-search
+    SIFR CACHE queryable session=cb4c0956f658 scope=#nav-search
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 35.0°C | step=MODEL CALL
+    MODEL (1.0s | PP 54.4 tok/s | TG 7.7 tok/s): go
+  [LEDGER 007] CAMERA | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0001 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 48% | discharging | battery 35.0°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 008] CAMERA | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Fujifilm Instax Mini 12 Instant Camera + 60 Photo Prints + Accessories, Lilac Purple | add-to-cart available
+      1: Fujifilm Instax Mini 12 Instant Camera - Blossom Pink | add-to-cart available
+      2: Fujifilm Instax Mini 12 Instant Camera - Lilac Purple | Automatic exposure with selfie mirror and parallax correction for ... | add-to-cart 
+      3: FUJIFILM Instax Mini 12 Instant Camera Holiday Bundle 2026, Blossom Pink | Instant film camera with selfie mirror, close-u... | add-to-cart 
+      4: Fujifilm Instax Mini 12 Instant Camera + MiniMate Accessory Bundle & Compatible Custom Case + Fuji Instax Film Value Pack... | add-to-cart a
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 48% | discharging | battery 34.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (99.2s | reasoning=1901 chars): 1
+  [LEDGER 009] CAMERA | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 010] CAMERA | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 011] CAMERA | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instax-Mini-Instant-Camera/dp/B0BWP15J1P/ref=sr_1_6…
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 47% | discharging | battery 35.0°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 012] CAMERA | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 013] CAMERA | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini 12 Instant Camera - Blossom Pink : Electronics / #feature-bullets | Prints out high-quality, 2” x 3” INSTAX MINI instant photos in approximately five seconds (Development time thereafter is approximately 90 seconds). Uses INSTAX MINI instant film, which is sold separ
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 47% | discharging | battery 35.0°C | step=REASONER CALL
+    GEMMA4 LOCAL (52.1s | reasoning=1566 chars): Y
+  [LEDGER 014] CAMERA | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Is this a real Fujifilm Instax MINI 12 CAMERA, not film or a case? -> Y (yes exact camera)
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    E2LLM PRIMARY PRICE: $84.99 | #corePriceDisplay_desktop_feature_div
+    BUNDLE AUDIT: standalone camera; no offered bundled items in listing title
+    LEDGER COMPATIBLE: CAMERA | item USD 84.99 | running subtotal USD 84.99/200.00
+  [LEDGER 015] CAMERA | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 46% | discharging | battery 35.5°C | step=MODEL CALL
+    MODEL (2.0s | PP 70.8 tok/s | TG 15.4 tok/s): add_to_shopping_cart
+  [LEDGER 016] CAMERA | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 017] CAMERA | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+
+[ITEM FILM] compatible Instax Mini film
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 46% | discharging | battery 35.5°C | step=REASONER CALL
+    GEMMA4 LOCAL (76.6s | reasoning=1466 chars): ```json
+{
+"query":"Instax Mini 12 film pack",
+"level":0
+}
+```
+  [LEDGER 018] FILM | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 019] FILM | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 46% | discharging | battery 35.5°C | step=MODEL CALL
+    MODEL (1.5s | PP 34.9 tok/s | TG 15.7 tok/s): search_amazon_search_amazon
+  [LEDGER 020] FILM | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 021] FILM | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> input0001
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 46% | discharging | battery 35.5°C | step=ACT paste
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+  [LEDGER 022] FILM | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    SIFR CACHE queryable session=70aad1c7c7d2 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 46% | discharging | battery 35.5°C | step=MODEL CALL
+    MODEL (1.0s | PP 52.6 tok/s | TG 7.8 tok/s): go
+  [LEDGER 023] FILM | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0002 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 46% | discharging | battery 35.5°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 024] FILM | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: FUJIFILM INSTAX MINI Film 200 Sheets Bundle | For Instant Photos, Scrapbooks & Sharing | 200 Total Pictures for Instax Cam... | add-to-cart 
+      1: Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) | add-to-cart available
+      2: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 12, 11, 40 Bun... | add-to-cart 
+      3: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 40, 12, 11, 9,... | add-to-cart 
+      4: Fujifilm Instax Mini Film for All Mini Cameras + Quality Photo Cloth, 40 Sheets | add-to-cart available
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 46% | discharging | battery 35.5°C | step=REASONER CALL
+    GEMMA4 LOCAL (91.6s | reasoning=1824 chars): 0
+  [LEDGER 025] FILM | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 026] FILM | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 027] FILM | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instax-Mini-Twin-200/dp/B072JXNGR4/ref=sr_1_21…
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 45% | discharging | battery 35.2°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 028] FILM | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=f524e691167c scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 029] FILM | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=f524e691167c scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com : FUJIFILM INSTAX MINI Film 200 Sheets Bundle | For Instant Photos, Scrapbooks & Sharing | 200 Total Pictures for Instax Cameras : Electronics / #feature-bullets | Instant film compatible with Fujifilm instax mini. Film size 2.1" x 3.4". Pack includes 20 exposures.
+    E2LLM -> GEMMA FOCUSED FILM FACTS: 'PRODUCT IDENTITY TITLE: Amazon.com : FUJIFILM INSTAX MINI Film 200 Sheets Bundle | For Instant Photos, Scrapbooks & Sharing | 200 Total Pictures for Instax Cameras : Electronics\nInstant film compatible with Fujifilm instax mini. Film size 2.1" x 3.4". Pack includes 20 exposures.'
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 45% | discharging | battery 35.2°C | step=REASONER CALL
+    GEMMA4 LOCAL (83.8s | reasoning=1710 chars): Y
+  [LEDGER 030] FILM | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Does this listing supply REAL INSTAX MINI film for the Mini 12? Reject SQUA -> Y (correct mini film)
+    SIFR CACHE queryable session=f524e691167c scope=root
+    E2LLM PRIMARY PRICE: $179.95 | #corePriceDisplay_desktop_feature_div
+  [LEDGER 031] FILM | SPEC_VERIFY | COMPONENT_UNVERIFIED_OR_INCOMPATIBLE
+    COMPATIBILITY BLOCKED: BUDGET: 84.99+179.95>200.00 USD; cart unchanged; Gemma will decide next move
+    RECOVERY OPTIONS FROM SiFR -> GEMMA:
+      0: SELECT this previously observed alternative: Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) | add-to-cart available
+      1: SELECT this previously observed alternative: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 12, 11, 40 Bun... | add-to-cart av
+      2: SELECT this previously observed alternative: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 40, 12, 11, 9,... | add-to-cart av
+      3: SELECT this previously observed alternative: Fujifilm Instax Mini Film for All Mini Cameras + Quality Photo Cloth, 40 Sheets | add-to-cart available
+      R: RETURN to search results, reobserve products and choose again
+      S: SEARCH again with a genuinely different query
+      X: STOP for human review
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 44% | discharging | battery 35.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (90.0s | reasoning=1940 chars): R
+  [LEDGER 032] FILM | RECOVERY_DECIDE | GEMMA_RECOVERY_DECISION
+  [LEDGER 033] FILM | RECOVERY_DECIDE | RETURN_TO_OBSERVED_RESULTS_DISPATCH
+    ACT navigate -> https://www.amazon.com/s?k=Instax+Mini+12+film+pack&i=electronics&crid=TYTWM0TG045P&sprefix=instax+m
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 44% | discharging | battery 35.9°C | step=ACT navigate
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 034] FILM | RECOVERY_RETURN_EFFECT_VERIFY | OTHER_CANDIDATES_REOBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) | add-to-cart available
+      1: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 12, 11, 40 Bun... | add-to-cart 
+      2: Fujifilm Instax Mini Film Two Instant Film Twin Packs - 40 EXP Total, ISO 800, Compatible to Mini Evo, Mini 40, 12, 11, 9,... | add-to-cart 
+      3: Fujifilm Instax Mini Film for All Mini Cameras + Quality Photo Cloth, 40 Sheets | add-to-cart available
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 44% | discharging | battery 35.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (88.4s | reasoning=1866 chars): 0
+  [LEDGER 035] FILM | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 036] FILM | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 037] FILM | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instax-Mini-Film-Variety/dp/B0FP6324HH/ref=sr_1_28…
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 43% | discharging | battery 35.7°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 038] FILM | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 039] FILM | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) : Electronics / #feature-bullets | 10 sheets per design for plenty of instant fun / #feature-bullets | Vivid Colors & Sharp Details – High-quality film for beautiful images every time
+    E2LLM -> GEMMA FOCUSED FILM FACTS: "PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) : Electronics\nCompatible with All Instax Mini Cameras & Printers – Works with Instax Mini 9, 11, 12, 40, 90, Link Printers, and more Whether you're decorating a photo wall, creating gifts, or capturing everyday moments,\n10 sheets per design for plenty of instant fun\nVivid Colors & Sharp Details – High-quality film for beautiful images every time\nFast Developing Time – Photos appear in minutes, ready to share instantly"
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 43% | discharging | battery 35.7°C | step=REASONER CALL
+    GEMMA4 LOCAL (105.1s | reasoning=1654 chars): Y
+  [LEDGER 040] FILM | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Does this listing supply REAL INSTAX MINI film for the Mini 12? Reject SQUA -> Y (correct mini film)
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    E2LLM PRIMARY PRICE: $17.89 | #corePriceDisplay_desktop_feature_div
+    LEDGER COMPATIBLE: FILM | item USD 17.89 | running subtotal USD 102.88/200.00
+  [LEDGER 041] FILM | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 42% | discharging | battery 35.4°C | step=MODEL CALL
+    MODEL (2.7s | PP 51.1 tok/s | TG 15.4 tok/s): add_to_shopping_cart
+  [LEDGER 042] FILM | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 043] FILM | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+
+[ITEM BATTERIES] spare AA alkaline batteries
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 42% | discharging | battery 35.4°C | step=REASONER CALL
+    GEMMA4 LOCAL (63.3s | reasoning=1167 chars): ```json
+{
+"query":"pack of AA 1.5V alkaline batteries","level":0
+}
+```
+  [LEDGER 044] BATTERIES | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 045] BATTERIES | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 42% | discharging | battery 35.4°C | step=MODEL CALL
+    MODEL (0.7s | PP 24.2 tok/s | TG 16.3 tok/s): search_amazon_search_amazon
+  [LEDGER 046] BATTERIES | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 047] BATTERIES | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> input0001
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 42% | discharging | battery 35.4°C | step=ACT paste
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+  [LEDGER 048] BATTERIES | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    SIFR CACHE queryable session=9d84e7817889 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 42% | discharging | battery 35.4°C | step=MODEL CALL
+    MODEL (0.7s | PP 11.7 tok/s | TG 7.7 tok/s): go
+  [LEDGER 049] BATTERIES | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0002 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 42% | discharging | battery 35.4°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 050] BATTERIES | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable | add-to-cart available
+      1: Amazon Basics 12-Pack AA Alkaline Batteries, 1.5 Volt, Long Lasting Power, 10-Year Shelf Life | add-to-cart available
+      2: Amazon Basics 20-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Leak-Free Shelf Life, for Everyday and Household Devices | add-to-cart availa
+      3: Amazon Basics 36-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, for Everyday and Professional Devices | add-to-cart available
+      4: Amazon Basics 48-Pack AA Alkaline High-Performance Batteries, 1.5 Volt, 10-Year Shelf Life, Long-lasting, No Leakage | add-to-cart available
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 42% | discharging | battery 34.7°C | step=REASONER CALL
+    GEMMA4 LOCAL (72.6s | reasoning=1677 chars): 0
+  [LEDGER 051] BATTERIES | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 052] BATTERIES | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 053] BATTERIES | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-100-Pack/dp/B01B8R6PF2/ref=sr_1_4
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 41% | discharging | battery 35.4°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    PRODUCT OBSERVE ERROR 1/6: PerceptionDecodeError: sifr_capture: MCP tool returned isError=true | Capture failed on this tab — it may still be rendering, or a full-page capture hit a transient error. R
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 054] BATTERIES | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 055] BATTERIES | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable : Health & Household / #feature-bullets | IN THE BOX: 100-pack of 1.5 volt AA alkaline batteries for reliable performance across a wide range of devices / #feature-bullets | DEVICE COMPATIBLE: Ideal batte
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 41% | discharging | battery 35.9°C | step=REASONER CALL
+    GEMMA4 LOCAL (89.6s | reasoning=1943 chars): Y
+  [LEDGER 056] BATTERIES | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Is this a pack of >=2 AA alkaline 1.5V batteries, not AAA, rechargeable or  -> Y (AA alkaline batteries)
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    E2LLM PRIMARY PRICE: $25.99 | #corePriceDisplay_desktop_feature_div
+    LEDGER COMPATIBLE: BATTERIES | item USD 25.99 | running subtotal USD 128.87/200.00
+  [LEDGER 057] BATTERIES | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 40% | discharging | battery 35.8°C | step=MODEL CALL
+    MODEL (2.6s | PP 51.5 tok/s | TG 15.4 tok/s): add_to_shopping_cart
+  [LEDGER 058] BATTERIES | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 059] BATTERIES | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+
+[ITEM CASE] protective case for Instax Mini 12
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 40% | discharging | battery 35.8°C | step=REASONER CALL
+    GEMMA4 LOCAL (75.2s | reasoning=1543 chars): ```json
+{
+  "query": "Fujifilm Instax Mini 12 carrying case",
+  "level": 0
+}
+```
+  [LEDGER 060] CASE | REASONER_PLAN | GEMMA_QUERY
+  [LEDGER 061] CASE | SEARCH_PREP | PERCEIVE_SEARCH
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 40% | discharging | battery 35.8°C | step=MODEL CALL
+    MODEL (1.6s | PP 73.0 tok/s | TG 16.0 tok/s): search_amazon_search_amazon
+  [LEDGER 062] CASE | SEARCH_PREP | SEARCH_FIELD_CHOSEN
+  [LEDGER 063] CASE | SEARCH_TYPE | TYPE_DISPATCH
+    ACT paste -> #twotabsearchtextbox
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 40% | discharging | battery 35.8°C | step=ACT paste
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+  [LEDGER 064] CASE | SEARCH_TYPE_VERIFY | TYPE_READY
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    SIFR CACHE queryable session=12de1cc95280 scope=root
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 40% | discharging | battery 35.8°C | step=MODEL CALL
+    MODEL (1.0s | PP 51.5 tok/s | TG 7.8 tok/s): go
+  [LEDGER 065] CASE | SEARCH_SUBMIT | SEARCH_SUBMIT_DISPATCH
+    SIFR INSPECT CONFIRMED: input0001 -> #nav-search-submit-button
+    ACT click -> #nav-search-submit-button
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 40% | discharging | battery 35.8°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=#search
+  [LEDGER 066] CASE | SEARCH_EFFECT_VERIFY | SEARCH_EFFECT_OBSERVED
+    SIFR PRODUCT CANDIDATES -> GEMMA:
+      0: Fujifilm Instax Mini 12 Camera Case - Blossom Pink | add-to-cart available
+      1: Huemate Clear Camera Case for Fujifilm Instax Mini 12, Blue Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-Shu... | add-to-cart 
+      2: Huemate Clear Camera Case for Fujifilm Instax Mini 12, Pink Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-Shu... | add-to-cart 
+      3: Huemate Clear Camera Case for Fujifilm Instax Mini 12, Purple Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-S... | add-to-cart 
+      4: WOGOZAN Camera Case for Fujifilm Instax Mini 12 Instant Camera, Brown | Mini 12 Case for fujifilm Instax, PU Mini Camera C... | add-to-cart 
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 40% | discharging | battery 35.8°C | step=REASONER CALL
+    GEMMA4 LOCAL (123.2s | reasoning=1792 chars): 1
+  [LEDGER 067] CASE | REASONER_CHOOSE | GEMMA_CHOSE_PRODUCT
+  [LEDGER 068] CASE | CHOOSE_PRODUCT | PRODUCT_CHOSEN
+  [LEDGER 069] CASE | PRODUCT_OPEN | PRODUCT_OPEN_DISPATCH
+    ACT navigate -> https://www.amazon.com/Huemate-Camera-Fujifilm-Mini-12/dp/B0GV6CSQ5N/ref=sr_1_19…
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 39% | discharging | battery 35.0°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 070] CASE | PRODUCT_EFFECT_VERIFY | PRODUCT_EFFECT_OBSERVED
+    SIFR CACHE queryable session=3a76de8db92d scope=root
+    QUANTITY GUARD: no explicit >1 evidence -> continue
+  [LEDGER 071] CASE | QUANTITY_VERIFY | QUANTITY_ONE_VERIFIED
+    SIFR CACHE queryable session=3a76de8db92d scope=root
+    E2LLM PRODUCT-LOCAL SPEC EVIDENCE: PRODUCT IDENTITY TITLE: Amazon.com : Huemate Clear Camera Case for Fujifilm Instax Mini 12, Blue Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-Shutter Protective Cover, Composition Cards, Bac / #feature-bullets | Perfect Fit for Instax Mini 12: Designed specifically for Fujifilm Instax Mini 12, this clear prote
+    [DEVICE] SM-G991B | Google Gemma 4 E2B Q3 LOCAL | model-endpoint 127.0.0.1:8081 | battery 39% | discharging | battery 35.0°C | step=REASONER CALL
+    GEMMA4 LOCAL (87.5s | reasoning=1921 chars): Y
+  [LEDGER 072] CASE | SPEC_REASONER | GEMMA_CLASSIFIED
+    GEMMA COMPATIBILITY: Does this CASE explicitly fit FUJIFILM INSTAX MINI 12 (not Mini 11-only, Sq -> Y (explicit fit Mini 12)
+    SIFR CACHE queryable session=3a76de8db92d scope=root
+    E2LLM PRIMARY PRICE: $14.99 | #corePriceDisplay_desktop_feature_div
+    LEDGER COMPATIBLE: CASE | item USD 14.99 | running subtotal USD 143.86/200.00
+  [LEDGER 073] CASE | SPEC_VERIFY | GEMMA_SPEC_ACCEPTED_LEDGER_PRICE_CHECKED
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=MODEL CALL
+    MODEL (2.6s | PP 53.0 tok/s | TG 15.6 tok/s): add_to_shopping_cart
+  [LEDGER 074] CASE | CHOOSE_ADD | ADD_CONTROL_CHOSEN
+  [LEDGER 075] CASE | PLAN | COMPONENT_STAGED_NO_CART_MUTATION
+
+[PLAN AUDIT] complete=True staged_usd=143.86 / 200.00
+  [LEDGER 076] - | PLAN_AUDIT | PLAN_COMPLETE
+    SIFR CACHE queryable session=3a76de8db92d scope=root
+    CART EVIDENCE -> explicit count=0
+
+[COMMIT CAMERA] rechecking planned product B0BWP15J1P
+  [LEDGER 077] CAMERA | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instax-Mini-Instant-Camera/dp/B0BWP15J1P/ref=sr_1_6%E2%80%A6
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    SIFR INVALIDATE: tab URL changed
+    COMMIT CAPTURE READ 1/3 FAILED: PerceptionDecodeError: COMMIT tab URL changed during observation
+    SIFR INVALIDATE: COMMIT read-only recapture
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 078] - | COMMIT | READ_ONLY_RECAPTURE_RECOVERED
+    SIFR CACHE queryable session=b2957fdb16de scope=root
+    E2LLM PRIMARY PRICE: $84.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=MODEL CALL
+    MODEL (0.8s | PP 156.8 tok/s | TG 29.7 tok/s): add_to_shopping_cart
+  [LEDGER 079] CAMERA | COMMIT | ADD_DISPATCH
+    ACT click -> input0004
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=1
+    CART EVIDENCE 1/6: expected=1 observed=1
+  [LEDGER 080] CAMERA | DONE | ITEM_COMPLETE
+    SIFR CACHE queryable session=04fd5e6c1e86 scope=#nav-cart
+    CART EVIDENCE -> explicit count=1
+
+[COMMIT FILM] rechecking planned product B0FP6324HH
+  [LEDGER 081] FILM | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/Fujifilm-Instax-Mini-Film-Variety/dp/B0FP6324HH/ref=sr_1_28%E2%80%A6
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    SIFR INVALIDATE: tab URL changed
+    COMMIT CAPTURE READ 1/3 FAILED: PerceptionDecodeError: COMMIT tab URL changed during observation
+    SIFR INVALIDATE: COMMIT read-only recapture
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 082] - | COMMIT | READ_ONLY_RECAPTURE_RECOVERED
+    SIFR CACHE queryable session=290f7ca7500c scope=root
+    E2LLM PRIMARY PRICE: $17.89 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=MODEL CALL
+    MODEL (0.9s | PP 154.7 tok/s | TG 29.9 tok/s): add_to_shopping_cart
+  [LEDGER 083] FILM | COMMIT | ADD_DISPATCH
+    ACT click -> input0004
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=2
+    CART EVIDENCE 1/6: expected=2 observed=2
+  [LEDGER 084] FILM | DONE | ITEM_COMPLETE
+    SIFR CACHE queryable session=3e4c47b0f1b0 scope=#nav-cart
+    CART EVIDENCE -> explicit count=2
+
+[COMMIT BATTERIES] rechecking planned product B01B8R6PF2
+  [LEDGER 085] BATTERIES | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/AmazonBasics-Performance-Alkaline-Batteries-100-Pack/dp/B01B8R6PF2/ref=sr_1_4
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    COMMIT CAPTURE READ 1/3 FAILED: PerceptionDecodeError: sifr_capture: MCP tool returned isError=true | Capture failed on this tab — it may still be rendering, or a full-page capture hit a transient error. Retry, or capture a specific section with
+    SIFR INVALIDATE: COMMIT read-only recapture
+    SIFR CAPTURE preset=normal scope=root
+  [LEDGER 086] - | COMMIT | READ_ONLY_RECAPTURE_RECOVERED
+    SIFR CACHE queryable session=f24c46a1e1d8 scope=root
+    E2LLM PRIMARY PRICE: $25.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=MODEL CALL
+    MODEL (0.8s | PP 155.2 tok/s | TG 30.0 tok/s): add_to_shopping_cart
+  [LEDGER 087] BATTERIES | COMMIT | ADD_DISPATCH
+    ACT click -> input0003
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=3
+    CART EVIDENCE 1/6: expected=3 observed=3
+  [LEDGER 088] BATTERIES | DONE | ITEM_COMPLETE
+    SIFR CACHE queryable session=a071ed5ee70d scope=#nav-cart
+    CART EVIDENCE -> explicit count=3
+
+[COMMIT CASE] rechecking planned product B0GV6CSQ5N
+  [LEDGER 089] CASE | COMMIT | PRODUCT_NAVIGATE_DISPATCH
+    ACT navigate -> https://www.amazon.com/Huemate-Camera-Fujifilm-Mini-12/dp/B0GV6CSQ5N/ref=sr_1_19%E2%80%A6?th=1
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT navigate
+    SIFR INVALIDATE: unconfirmed act result=no-change
+    SIFR INVALIDATE: tab URL changed
+    SIFR CAPTURE preset=normal scope=root
+    SIFR CACHE queryable session=fcdcb18726de scope=root
+    E2LLM PRIMARY PRICE: $14.99 | #corePriceDisplay_desktop_feature_div
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=MODEL CALL
+    MODEL (0.9s | PP 151.9 tok/s | TG 30.1 tok/s): add_to_shopping_cart
+  [LEDGER 090] CASE | COMMIT | ADD_DISPATCH
+    ACT click -> input0003
+    [DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=ACT click
+    SIFR INVALIDATE: act result=navigation
+    SIFR CAPTURE preset=normal scope=#nav-cart
+    CART EVIDENCE -> explicit count=4
+    CART EVIDENCE 1/6: expected=4 observed=4
+  [LEDGER 091] CASE | DONE | ITEM_COMPLETE
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=FINAL AUDIT
+    SIFR CACHE queryable session=599eb18c9edd scope=#nav-cart
+    CART EVIDENCE -> explicit count=4
+
+================ FINAL HANDOFF ================
+[DEVICE] SM-G991B | Qwen3.5-0.8B LOCAL | model-endpoint 127.0.0.1:8080 | battery 38% | discharging | battery 35.3°C | step=FINAL HANDOFF
+{
+  "status": "READY_FOR_HUMAN_REVIEW",
+  "architecture": "Amazon SiFR instax-kit dual-model ledger v12 Gemma4",
+  "store": "Amazon",
+  "cart_count": 4,
+  "expected_cart_count": 4,
+  "mode": "COMMIT",
+  "budget_usd": 200.0,
+  "plan_subtotal_usd": 143.86,
+  "items": {
+    "CAMERA": {
+      "status": "ADDED",
+      "product": "Fujifilm Instax Mini 12 Instant Camera - Blossom Pink | add-to-cart available",
+      "asin": "B0BWP15J1P",
+      "usd": 84.99,
+      "covered_by": null,
+      "compatibility": {
+        "format": "INSTAX_MINI",
+        "reason": "GEMMA_CONFIRMED_CAMERA_IN_LISTING",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini 12 Instant Camera - Blossom Pink : Electronics\n#feature-bullets | Prints out high-quality, 2” x 3” INSTAX MINI instant photos in approximately five seconds (Development time thereafter is approximately 90 seconds). Uses INSTAX MINI instant film, which is sold separately.\n#feature-bullets | Includes: Hand strap, user manual, (2) AA batteries and 1-year limited warranty",
+        "model": "MINI_12"
+      },
+      "failure": null
+    },
+    "FILM": {
+      "status": "ADDED",
+      "product": "Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) | add-to-cart available",
+      "asin": "B0FP6324HH",
+      "usd": 17.89,
+      "covered_by": null,
+      "compatibility": {
+        "format": "INSTAX_MINI",
+        "reason": "GEMMA_AND_FILM_FORMAT_MATCH",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com : Fujifilm Instax Mini Film (Mermaid Tail / 10 Sheets) : Electronics\n#feature-bullets | 10 sheets per design for plenty of instant fun\n#feature-bullets | Vivid Colors & Sharp Details – High-quality film for beautiful images every time\n#feature-bullets | Fast Developing Time – Photos appear in minutes, ready to share instantly\n#feature-bullets | Compatible with All Instax Mini Cameras & Printers – Works with Instax Mini 9, 11, 12, 40, 90, Link Printers, and more Whether you're decorating a photo wall, creating gifts, or capturing everyday moments,"
+      },
+      "failure": null
+    },
+    "BATTERIES": {
+      "status": "ADDED",
+      "product": "Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable | add-to-cart available",
+      "asin": "B01B8R6PF2",
+      "usd": 25.99,
+      "covered_by": null,
+      "compatibility": {
+        "format": "AA_ALKALINE",
+        "reason": "GEMMA_AND_BATTERY_SPECS_MATCH",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com: Amazon Basics 100-Pack AA Alkaline Batteries, 1.5 Volt, 10-Year Shelf Life, Reliable : Health & Household\n#feature-bullets | IN THE BOX: 100-pack of 1.5 volt AA alkaline batteries for reliable performance across a wide range of devices\n#feature-bullets | DEVICE COMPATIBLE: Ideal battery for game controllers, toys, flashlights, digital cameras, clocks, and more\n#feature-bullets | EASY USE & STORAGE: Ships in Certified Frustration-Free Packaging; easy to open and store extras for later use\n#feature-bullets | SINGLE USE: These batteries are NOT rechargeable; for rechargeable options, check out Amazon Basics rechargeable batteries\n#feature-bullets | For frequent/professional/industrial use, check out Amazon Basics Industrial AA batteries.",
+        "count": 100
+      },
+      "failure": null
+    },
+    "CASE": {
+      "status": "ADDED",
+      "product": "Huemate Clear Camera Case for Fujifilm Instax Mini 12, Blue Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-Shu... | add-to-cart available",
+      "asin": "B0GV6CSQ5N",
+      "usd": 14.99,
+      "covered_by": null,
+      "compatibility": {
+        "format": "FITS_INSTAX_MINI_12",
+        "reason": "GEMMA_AND_CASE_MODEL_MATCH",
+        "evidence": "PRODUCT IDENTITY TITLE: Amazon.com : Huemate Clear Camera Case for Fujifilm Instax Mini 12, Blue Camera Strap | Mini 12 Case for fujifilm Instax, with Anti-Shutter Protective Cover, Composition Cards, Bac\n#feature-bullets | Perfect Fit for Instax Mini 12: Designed specifically for Fujifilm Instax Mini 12, this clear protective case fits snugly without loosening, Precise cutouts ensure full access to all buttons and functions \n#feature-bullets | Anti-Accidental Shutter Protection: Built-in shutter cover prevents accidental button presses during carrying or handling. Avoid wasted film and unwanted shots, keeping your Instax Mini 12 always ready whe\n#feature-bullets | Built-in Photo Storage – Safe & Convenient: The rear pocket holds up to 10 Instax Mini photos, allowing you to store each shot right after taking it. Keeps your prints organized, easy to carry, and helps p\n#feature-bullets | Durable Thickened Clear PC Material with Strap: Made of premium transparent PC material with a thickened design for enhanced protection against scratches and minor drops, while maintaining high clarity"
+      },
+      "failure": null
+    }
+  },
+  "checkout_performed": false
+}
+state: /data/data/com.termux/files/home/instax_v13_20261012_125506_31892_state.json
+log  : /data/data/com.termux/files/home/logs/instax_v13_20261012_125506_31892.jsonl
+STOP: cart only. No checkout, Buy Now, payment, or purchase action was attempted.
